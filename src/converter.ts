@@ -438,7 +438,7 @@ export class Converter {
       } else {
         this.log(`Down convert reference object to JSON Reference:\n${JSON.stringify(node, null, 3)}`);
         Object.keys(node)
-          .filter((key) => key !== '$ref')
+          .filter((key) => key !== '$ref' && key !== 'examples')
           .forEach((key) => delete node[key]);
         return node;
       }
